@@ -15,7 +15,7 @@ class Clock extends React.Component {
   }
 
   componentWillUnmount() {
-    //clearInterval(this.timerID);
+    clearInterval(this.timerID);
   }
 
   tick() {
