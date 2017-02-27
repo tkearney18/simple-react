@@ -23,7 +23,9 @@ var TodoApp = React.createClass({
 		);
 	}
 });
-
+/**
+ * TodoBanner provides a simple banner for the list.
+ */
 var TodoBanner = React.createClass({
 	render: function(){
 		return (
@@ -70,10 +72,11 @@ var TodoForm = React.createClass({
 	//handleSubmit adds the properties on onFormSubmit and sets the state
 	handleSubmit: function(e){
 		e.preventDefault();
+		// preserve the props to be used by TodoListItem
 		this.props.onFormSubmit({item: this.state.item, desc: this.state.desc});
-		this.setState({item: this.state.item, desc: this.state.desc});
-		//ReactDOM.findDOMNode(this.refs.item).focus();
-		this.getInitialState();
+		//this.setState({item: this.state.item, desc: this.state.desc});
+		// reset the state back to the default of blanks
+		this.setState({item: '', desc: ''});
 		return;
 	},
 	// onChange handler to change the state. only one is needed when using the form of e.target.name
