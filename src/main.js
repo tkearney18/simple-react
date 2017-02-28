@@ -2,3 +2,6 @@
 import './greeting.js';
 import './clock.js';
 import './todo.js';
+import './components/header.js';
+import './about.js';
+import './components/nav.js';
